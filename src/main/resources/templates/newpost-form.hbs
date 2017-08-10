@@ -1,8 +1,14 @@
 {{#partial "content"}}
-
+    {{#if editPost}}
+        <h1>Edit this Post!</h1>
+        <form action="/posts/{{editPost.id}}/update" method="post">
+            <label for="content">Edit this post's content</label>
+            <input id="content" name="content" type="text" value="{{editPost.content}}">
+        </form>
+    {{else}}
     <p>Add a new Backpack:</p>
 
-    <form action="/posts/new" method="POST">
+    <form action="/posts/new" method="post">
         <label for="content">Things you have in your backpack</label>
         <input id="content" name="content" type="text"><br>
         <label for = "boolean">Do you have a map?</label><br>

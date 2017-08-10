@@ -15,7 +15,14 @@ public class App {
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            ArrayList<Backpack> backpacks = Backpack.getAll();
+            model.put("posts", backpacks);
             return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/posts/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "post-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/posts/new", (request, response) -> { //URL to make new post on POST route
