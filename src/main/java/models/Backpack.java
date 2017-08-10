@@ -29,13 +29,7 @@ public class Backpack {
     public void addMoneyToYourWallet(){
         this.wallet += money;
     }
-    public void backPackConstructorHelper(){
-            Backpack(boolean map, String things, int wallet){
-            this.map = map;
-            this.things = things;
-            this.wallet = wallet;
-        }
-    }
+
 
 
 
