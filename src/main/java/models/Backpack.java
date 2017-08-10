@@ -11,6 +11,8 @@ public class Backpack {
     private int wallet;
     private String userInput;
     private static ArrayList<Backpack> instances = new ArrayList<>();
+    private int id;
+
 
     public Backpack(boolean map, String things, int wallet) {
         this.map = map;
@@ -30,11 +32,18 @@ public class Backpack {
         return things;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public int getWallet() {
         return wallet;
     }
     public void setWallet(int wallet) {
         this.wallet = wallet;
+    }
+    public static Backpack findById(int id){
+        return instances.get(id-1); //why minus 1? See if you can figure it out.
     }
 
 
