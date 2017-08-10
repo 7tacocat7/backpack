@@ -29,7 +29,6 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             boolean mapBoolean = Boolean.parseBoolean(request.queryParams("mapBoolean"));
             int wallet = Integer.parseInt(request.queryParams("wallet"));
-           System.out.println("Boolean Value: " + boolVal);
             String content = request.queryParams("content");
             Backpack newBackpack = new Backpack(mapBoolean,content,wallet);
             model.put("post",newBackpack);
