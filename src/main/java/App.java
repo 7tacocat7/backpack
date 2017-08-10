@@ -25,7 +25,7 @@ public class App {
             String content = request.queryParams("content");
             Backpack newBackpack = new Backpack(mapBoolean,content,wallet);
             model.put("post",newBackpack);
-            return new ModelAndView(model, "success.hbs");
+            return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
 
     }

@@ -1,29 +1,15 @@
 {{#partial "content"}}
 
-    <h1>Backpack Items list!</h1>
+    <h1>Backpacks!</h1>
 
-    {{#if posts}} <!--if posts exist, then -->
-    {{#each posts }} <!--loop-->
-    <p>Current post:</p>
-    <p>{{ content }}</p> <!--show-->
-    {{/each}}
-    {{else}} <!--no posts!-->
-    <p>No Backpacks</p>
+    {{#if posts}}
+        {{#each posts }}
+            <p>Current Backpack:</p>
+            <p>{{ content }} <a href="/posts/{{id}}">read more...</a></p>
+        {{/each}}
+    {{else}}
+        <p>No posts!</p>
     {{/if}}
-
-    <p>Add a new Backpack:</p>
-
-    <form action="/posts/new" method="POST">
-        <label for="content">Things you have in your backpack</label>
-        <input id="content" name="content" type="text"><br>
-        <label for = "boolean">Do you have a map?</label><br>
-        <input id= "mapBoolean" type="radio" name="mapBoolean" value="true"> true <br>
-        <input id= "mapBoolean" type="radio" name="mapBoolean" value="false"> False <br>
-        <label for="wallet">how much money do you have in your wallet?</label>
-        <input id="wallet" name="wallet" type="text"><br>
-
-        <button type="submit" class="btn btn-default">Add post</button>
-    </form>
 {{/partial}}
 
 {{> layout.hbs}}
