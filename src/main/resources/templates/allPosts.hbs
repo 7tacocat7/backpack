@@ -1,0 +1,28 @@
+
+{{#partial "content"}}
+
+    <h1>Backpack list!</h1>
+
+    {{#if posts}}
+        {{#each posts }}
+            <p>Content:</p>
+            <p>{{ map }}</p>
+            <p>{{ things }}</p>
+            <p>{{ wallet }}</p>
+            <h5>Created At:</h5>
+            <p> {{createdAt }}</p>
+            <h5>Post status:</h5>
+            <p>
+                {{#if published }}
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  Published
+                {{else}}
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Draft
+                {{/if}}
+            </p>
+        {{/each}}
+    {{else}}
+        <p>No posts!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
