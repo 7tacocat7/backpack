@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 /**
  * Created by Guest on 8/10/17.
  */
@@ -8,30 +10,17 @@ public class Backpack {
     private String things;
     private int wallet;
     private String userInput;
-    private int money;
-
- //   public Backpack = new Backpack(boolean map, String things, int money);
+    private static ArrayList<Backpack> instances = new ArrayList<>();
 
     public Backpack(boolean map, String things, int wallet) {
         this.map = map;
         this.things = things;
-        this.wallet = wallet;
+        instances.add(this);
+        this.id=instances.size();
     }
-
-    public void flipTheBool(){
-        this.map = false;
+    public static ArrayList<Backpack> getAll() {
+        return instances;
     }
-
-    public void addSomthingYouForgot(){
-        this.things += userInput; //"Also dont forget to bring extra socks!"
-    }
-
-    public void addMoneyToYourWallet(){
-        this.wallet += money;
-    }
-
-
-
 
     public boolean getMap() {
         return map;
@@ -39,13 +28,6 @@ public class Backpack {
 
     public String getThings() {
         return things;
-    }
-    public int getMoney() {
-        return money;
-    }
-
-    public String getUserInput() {
-        return userInput;
     }
 
     public int getWallet() {

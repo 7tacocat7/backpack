@@ -17,6 +17,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
+
         post("/posts/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<String, Object>();
             boolean mapBoolean = Boolean.parseBoolean(request.params("mapBoolean"));
@@ -28,6 +29,13 @@ public class App {
             return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
 
+        get("/posts/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfPostToFind = Integer.parseInt(req.params("id")); //pull id - must match route segment
+            Backpack foundBackpack = Backpack.findById(idOfPostToFind); //use it to find post
+            model.put("post", foundBackpack); //add it to model for template to display
+            return new ModelAndView(model, "post-detail.hbs"); //individual post page.
+        }, new HandlebarsTemplateEngine());
     }
 
 }
