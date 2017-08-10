@@ -16,10 +16,15 @@
     </form>
     {{#if posts}}
         {{#each posts }}
-            <p>Current Backpack:</p>
-            <p>{{ map }} <a href="/posts/{{id}}">read more...</a></p>
-            <p>{{ things}} <a href="/posts/{{id}}">read more...</a></p>
-            <p>{{ wallet }} <a href="/posts/{{id}}">read more...</a></p>
+            <p>--------------------------------------------------------</p>
+            <p>  Current Backpack:                                       </p>
+            <p>  Do you have a map?                                      </p>
+            <p>  {{ map }} <a href="/posts/{{id}}">read more...</a>      </p>
+            <p>  Things in this backpack.                                </p>
+            <p>  {{ things}} <a href="/posts/{{id}}">read more...</a>    </p>
+            <p>  The money in your pocket.                               </p>
+            <p>  {{ wallet }} <a href="/posts/{{id}}">read more...</a>   </p>
+            <p>--------------------------------------------------------</p>
         {{/each}}
     {{else}}
         <p>No posts!</p>
