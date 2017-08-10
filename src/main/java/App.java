@@ -27,7 +27,6 @@ public class App {
 
         post("/posts/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<String, Object>();
-            String boolVal = request.queryParams("mapBoolean");
             boolean mapBoolean = Boolean.parseBoolean(request.queryParams("mapBoolean"));
             int wallet = Integer.parseInt(request.queryParams("wallet"));
            System.out.println("Boolean Value: " + boolVal);
