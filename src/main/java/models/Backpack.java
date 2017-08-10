@@ -16,6 +16,7 @@ public class Backpack {
 
     public Backpack(boolean map, String things, int wallet) {
         this.map = map;
+        this.wallet = wallet;
         this.things = things;
         instances.add(this);
         this.id=instances.size();

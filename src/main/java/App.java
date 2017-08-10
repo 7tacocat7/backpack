@@ -27,9 +27,10 @@ public class App {
 
         post("/posts/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<String, Object>();
-            boolean mapBoolean = Boolean.parseBoolean(request.params("mapBoolean"));
+            String boolVal = request.queryParams("mapBoolean");
+            boolean mapBoolean = Boolean.parseBoolean(request.queryParams("mapBoolean"));
             int wallet = Integer.parseInt(request.queryParams("wallet"));
-//            System.out.println("Wallet Value: " + wallet);
+           System.out.println("Boolean Value: " + boolVal);
             String content = request.queryParams("content");
             Backpack newBackpack = new Backpack(mapBoolean,content,wallet);
             model.put("post",newBackpack);
